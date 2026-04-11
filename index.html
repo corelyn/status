@@ -105,15 +105,14 @@
     </div>
 
 <script>
-async function isOnline(site) { 
-      fetch(site, { method: "HEAD" }) 
-      .then(response => { if (response.status !== 200) {
-          return false; 
-      } else {
-           return true; 
-      } 
-  }) 
-.catch(() => { return false; }); 
+function isOnline(site) {
+    return fetch(site, { method: "HEAD" })
+        .then(response => {
+            return response.status === 200;
+        })
+        .catch(() => {
+            return false;
+        });
 }
 
 function setStatus(prefix, online) {
