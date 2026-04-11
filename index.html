@@ -92,7 +92,7 @@
         </div>
 
         <div class="card">
-            <h3>Corelyn Site</h3>
+            <h3>Corelyn AI</h3>
             <div class="status-row">
                 <div id="site-dot" class="dot"></div>
                 <span id="site-text">Checking...</span>
@@ -123,10 +123,10 @@ function setStatus(prefix, online) {
 
     if (online) {
         dot.classList.add("online");
-        text.textContent = "ONLINE";
+        text.textContent = "Operational";
     } else {
         dot.classList.add("offline");
-        text.textContent = "OFFLINE";
+        text.textContent = "Not operational";
     }
 }
 
