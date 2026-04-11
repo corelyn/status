@@ -11,15 +11,20 @@
             background: linear-gradient(to right, rgb(214, 214, 214), rgb(247, 25, 255), rgb(195, 0, 255));
         }
 
-        .center {
+        /* HEADER FIX */
+        .header {
             display: flex;
+            flex-direction: column;
             justify-content: center;
+            align-items: center;
             padding-top: 30px;
             color: white;
         }
 
-        .center img {
-            margin-bottom: 1rem;
+        .header h1 {
+            margin: 10px 0 0 0;
+            font-size: 28px;
+            letter-spacing: 1px;
         }
 
         .cards {
@@ -83,7 +88,8 @@
 
 <body>
 
-    <div class="center">
+    <!-- HEADER FIXED -->
+    <div class="header">
         <img src="https://github.com/corelyn/.github/raw/main/profile/nobglogo.png" width="150px">
         <h1>Corelyn AI Status</h1>
     </div>
@@ -106,19 +112,15 @@
         </div>
     </div>
 
-    <div class="center">
+    <div class="header">
         <button class="btn" onclick="updateStatus()">Check Again</button>
     </div>
 
 <script>
 function isOnline(site) {
     return fetch(site, { method: "HEAD" })
-        .then(response => {
-            return response.status === 200;
-        })
-        .catch(() => {
-            return false;
-        });
+        .then(response => response.status === 200)
+        .catch(() => false);
 }
 
 function setStatus(prefix, online) {
